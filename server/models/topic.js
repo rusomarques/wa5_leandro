@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const data = require('./../data.json');
 
 const TopicSchema = new Schema ({
-  _id: String,
+  // _id: String,
   title: String,
   published_at: String,
   score: Number
@@ -20,3 +20,7 @@ const TopicModel = mongoose.model('Topic', TopicSchema);
 
 
 exports.getAll = () => TopicModel.find().sort({score: 'asc'});
+
+exports.setTopic = (topic) => {
+  TopicModel.create(topic);
+}
