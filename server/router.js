@@ -4,6 +4,7 @@ const topic = require('./controllers/topic');
 
 router
   .get('/topics', topic.getAll)
-  .post('/topic', topic.setTopic);
+  .post('/topic', topic.setTopic)
+  .del('/topic/:id', topic.deleteTopic);
 
 module.exports = router;

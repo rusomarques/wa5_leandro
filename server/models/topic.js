@@ -19,8 +19,12 @@ const TopicModel = mongoose.model('Topic', TopicSchema);
 })();
 
 
-exports.getAll = () => TopicModel.find().sort({score: 'asc'});
+exports.getAll = () => TopicModel.find().sort({score: 'desc'});
 
 exports.setTopic = (topic) => {
   TopicModel.create(topic);
+}
+
+exports.deleteTopic = (topicTitle) => {
+  TopicModel.deleteOne({ title: topicTitle });
 }

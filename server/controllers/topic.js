@@ -9,3 +9,7 @@ exports.setTopic = async (ctx, next) => {
   await topic.setTopic(ctx.request.body);
   ctx.status = 201;
 };
+
+exports.deleteTopic = async (ctx, next) => {
+  await topic.delete(ctx.params.id);
+};
