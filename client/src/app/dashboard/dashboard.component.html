@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="topics">
   <ul>
     <li *ngFor="let topic of topics">
       <mat-card class="topic">
@@ -18,4 +18,17 @@
       </mat-card>
     </li>
   </ul>
+</div>
+<div *ngIf="!topics">
+    <mat-card class="topic">
+        <div id="card-content">
+          <div  id="topic-body">
+            <div id="topic-title">
+              <p>
+                  No topics yet
+              </p>
+            </div>
+          </div>
+        </div>
+      </mat-card>
 </div>
