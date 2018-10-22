@@ -2,10 +2,18 @@
   <ul>
     <li *ngFor="let topic of topics">
       <mat-card class="topic">
-        <div>
-
+        <div id="card-content">
+          <div id="score">
+            {{topic.score}}
+          </div>
+          <div  id="topic-body">
+            <div id="topic-title">
               {{topic.title }}
-              
+            </div>
+            <div id="date">
+              CREATED ON <span>{{topic.published_at | date:'mediumDate' }}</span>
+            </div>
+          </div>
         </div>
       </mat-card>
     </li>
