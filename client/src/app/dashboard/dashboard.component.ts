@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Topic } from '../topic';
 import { ApiClientService } from '../api-client.service';
 
@@ -10,6 +10,7 @@ import { ApiClientService } from '../api-client.service';
 export class DashboardComponent implements OnInit {
 
   topics: Topic[];
+  @Input() topicTitle: string;
 
   constructor(private apiClientService: ApiClientService) { }
 
@@ -20,6 +21,15 @@ export class DashboardComponent implements OnInit {
   getAllTopics() {
     this.apiClientService.getAllTopics()
       .subscribe(response => this.topics = response);
+  }
+
+  addTopic() {
+    this.apiClientService.addTopic({
+      title: this.topicTitle,
+      published_at: Date.now().toString(),
+      score: 0
+    })
+      .subscribe(topic => this.topics.push(topic));
   }
 
 }

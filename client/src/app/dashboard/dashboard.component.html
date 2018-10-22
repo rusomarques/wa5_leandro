@@ -1,3 +1,16 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Add Topic" value="Sushi">
+  </mat-form-field>
+</form>
+<div>
+  <label>Add topic:
+    <input [(ngModel)]="topicTitle" placeholder="new topic"/>
+  </label>
+  <button (click)="addTopic()">
+  </button>
+</div>
+
 <div *ngIf="topics">
   <ul>
     <li *ngFor="let topic of topics">
