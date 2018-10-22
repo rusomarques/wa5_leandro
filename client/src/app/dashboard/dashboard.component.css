@@ -27,3 +27,7 @@ li {
   margin-bottom: 0.8em;
   font-size: 1.2em;
 }
+
+#delete-topic {
+  justify-self: flex-end;
+}
