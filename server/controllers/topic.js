@@ -1,4 +1,4 @@
-const topic = require('./../models/topic');
+const topic = require("./../models/topic");
 
 exports.getAll = async (ctx, next) => {
   ctx.status = 200;
@@ -6,7 +6,8 @@ exports.getAll = async (ctx, next) => {
 };
 
 exports.setTopic = async (ctx, next) => {
-  await topic.setTopic(ctx.request.body);
+  // asign it to the body of the response to use it in the frontend
+  ctx.body = await topic.setTopic(ctx.request.body);
   ctx.status = 201;
 };
 
